@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="card text-center">
+	  <div class="card-header">
+	    <ul class="nav nav-pills card-header-pills nav-tabs border-0">
+	      <li class="nav-item">
+	        <a class="nav-link active" data-toggle="tab" href="#excavate_oversite">Excavate Oversite</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" data-toggle="tab" href="#hand_excavation">Hand Excavation</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" data-toggle="tab" href="#machine_excavation">Machine Excavation</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" data-toggle="tab" href="#level_and_compact">Level and Compact</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" data-toggle="tab" href="#backfill_and_compact">Backfill and Compact</a>
+	      </li>
+	    </ul>
+	  </div>
+
+	  <div class="container">
+	  	<div class="tab-content">
+
+		  <div id="excavate_oversite" class="card-body tab-pane fade in active show">
+		    <h5 class="card-title">Excavate Oversite</h5>
+		    <p class="card-text">
+		    	Excavate Oversite uses the following parameters. <br>
+		    	[i]. cal_CB used / Day <br>
+		    	[ii]. Petrol Liters used / Day <br>
+		    	[iii]. Labour / Day <br>
+		    	[iv]. Output m3 per day <br>
+		    	[v]. Petrol Price / Liter <br>
+		    </p>
+		    <h3>{{ excavate_oversite }}</h3>
+		    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+		  </div>
+
+		  <div id="hand_excavation" class="card-body tab-pane fade">
+		    <h5 class="card-title">Hand Excavation</h5>
+		    <p class="card-text">
+			    Hand Excavation uses the following parameters. <br>
+			    [i]. Labour / Day <br>
+			    [ii]. Output m3 / Day <br>
+			    [iii]. Percentage / Day <br>
+			</p>
+		    <h3>{{ hand_excavation }}</h3>
+		    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+		  </div>
+
+		  <div id="machine_excavation" class="card-body tab-pane fade">
+		    <h5 class="card-title">Machine Excavation</h5>
+		    <p class="card-text">
+			    Machine Excavation uses the following parameters. <br>
+			    [i]. Labour / Day <br>
+			    [ii]. Output m3 / Day <br>
+			    [iii]. Petrol Liters used / Day <br>
+			</p>
+		    <h3>{{ machine_excavation }}</h3>
+		    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+		  </div>
+
+		  <div id="level_and_compact" class="card-body tab-pane fade">
+		    <h5 class="card-title">Level and Compact</h5>
+		    <p class="card-text">
+			    Level and Compact uses the following parameters. <br>
+			    [i]. Labour / Day <br>
+			    [ii]. Output m2 / Day <br>
+			</p>
+		    <h3>{{ level_and_compact }}</h3>
+		    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+		  </div>
+
+		  <div id="backfill_and_compact" class="card-body tab-pane fade">
+		    <h5 class="card-title">Backfill and Compact</h5>
+		    <p class="card-text">
+			    Backfill and Compact uses the following parameters. <br>
+			    [i]. Labour / Day <br>
+			    [ii]. Output m3 / Day <br>
+			</p>
+		    <h3>{{ backfill_and_compact }}</h3>
+		    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+		  </div>
+
+		</div>
+	  </div>
+
+	</div>
+{% endblock content %}

@@ -1,0 +1,207 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+	<form method="post" action=".">
+
+	{% csrf_token %}
+
+	{% if resource_form.errors %}
+	{% for key, value in resource_form.errors.items %}
+  <div class="alert alert-danger">
+    {{ key }} {{ value }}
+  </div>
+	{% endfor %}
+	{% endif %}
+
+
+    <div class="col">
+      <label>{{ resource_form.description.label|title }}</label>
+      <!-- <input type="text" class="form-control" placeholder="Last name"> -->
+      {{ resource_form.description }}
+    </div>
+	    
+	  <div class="form-row">
+
+	    <div class="col">
+	      <label>{{ resource_form.labour_per_day.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="First name"> -->
+	      {{ resource_form.labour_per_day }}
+	    </div>
+	    <div class="col">
+	      <label>{{ resource_form.artisan_per_day.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="Last name"> -->
+	      {{ resource_form.artisan_per_day }}
+	    </div>
+	  </div>
+	  
+
+	  <div class="form-row">
+	    <div class="col">
+	      <label>{{ resource_form.cal_DB_per_day.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="First name"> -->
+	      {{ resource_form.cal_DB_per_day }}
+	    </div>
+	    <div class="col">
+	      <label>{{ resource_form.diesel_price_per_liter.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="Last name"> -->
+	      {{ resource_form.diesel_price_per_liter }}
+	    </div>
+	  </div>
+	  
+
+	  <div class="form-row">
+	    <div class="col">
+	      <label>{{ resource_form.petrol_price_per_liter.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="First name"> -->
+	      {{ resource_form.petrol_price_per_liter }}
+	    </div>
+	    <div class="col">
+	      <label>{{ resource_form.extractor_per_day.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="Last name"> -->
+	      {{ resource_form.extractor_per_day }}
+	    </div>
+	  </div>
+	  
+
+	  <div class="form-row">
+	    <div class="col">
+	      <label>{{ resource_form.dieldrex_per_liter.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="First name"> -->
+	      {{ resource_form.dieldrex_per_liter }}
+	    </div>
+	    <div class="col">
+	      <label>{{ resource_form.laterite_per_m3.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="Last name"> -->
+	      {{ resource_form.laterite_per_m3 }}
+	    </div>
+	  </div>
+	  
+
+	  <div class="form-row">
+	    <div class="col">
+	      <label>{{ resource_form.hand_roller_per_day.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="First name"> -->
+	      {{ resource_form.hand_roller_per_day }}
+	    </div>
+	    <div class="col">
+	      <label>{{ resource_form.hardcore_per_m3.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="Last name"> -->
+	      {{ resource_form.hardcore_per_m3 }}
+	    </div>
+	  </div>
+	  
+
+	  <div class="form-row">
+	    <div class="col">
+	      <label>{{ resource_form.tipper_per_day.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="First name"> -->
+	      {{ resource_form.tipper_per_day }}
+	    </div>
+	    <div class="col">
+	      <label>{{ resource_form.polythene_per_roll.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="Last name"> -->
+	      {{ resource_form.polythene_per_roll }}
+	    </div>
+	  </div>
+	  
+
+	  <div class="form-row">
+	    <div class="col">
+	      <label>{{ resource_form.cement_per_bag.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="First name"> -->
+	      {{ resource_form.cement_per_bag }}
+	    </div>
+	    <div class="col">
+	      <label>{{ resource_form.sharp_sand_per_m3.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="Last name"> -->
+	      {{ resource_form.sharp_sand_per_m3 }}
+	    </div>
+	  </div>
+	  
+
+	  <div class="form-row">
+	    <div class="col">
+	      <label>{{ resource_form.so_sand_per_m3.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="First name"> -->
+	      {{ resource_form.so_sand_per_m3 }}
+	    </div>
+	    <div class="col">
+	      <label>{{ resource_form.granite_per_m3.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="Last name"> -->
+	      {{ resource_form.granite_per_m3 }}
+	    </div>
+	  </div>
+	  
+
+	  <div class="form-row">
+	    <div class="col">
+	      <label>{{ resource_form.mixer_poker_operator_per_day.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="First name"> -->
+	      {{ resource_form.mixer_poker_operator_per_day }}
+	    </div>
+	    <div class="col">
+	      <label>{{ resource_form.HT_bars_per_ton.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="Last name"> -->
+	      {{ resource_form.HT_bars_per_ton }}
+	    </div>
+	  </div>
+	  
+
+	  <div class="form-row">
+	    <div class="col">
+	      <label>{{ resource_form.MS_bars_per_ton.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="First name"> -->
+	      {{ resource_form.MS_bars_per_ton }}
+	    </div>
+	    <div class="col">
+	      <label>{{ resource_form.binding_wire_per_kg.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="Last name"> -->
+	      {{ resource_form.binding_wire_per_kg }}
+	    </div>
+	  </div>
+	  
+
+	  <div class="form-row">
+	    <div class="col">
+	      <label>{{ resource_form.BRC_65.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="First name"> -->
+	      {{ resource_form.BRC_65 }}
+	    </div>
+	    <div class="col">
+	      <label>{{ resource_form.A142_per_m2.label|title }}</label>
+	      <!-- <input type="text" class="form-control" placeholder="Last name"> -->
+	      {{ resource_form.A142_per_m2 }}
+	    </div>
+	  </div>
+	  
+<!-- active_user
+description
+labour_per_day
+artisan_per_day
+cal_DB_per_day
+diesel_price_per_liter
+petrol_price_per_liter
+extractor_per_day
+dieldrex_per_liter
+laterite_per_m3
+hand_roller_per_day
+hardcore_per_m3
+tipper_per_day
+polythene_per_roll
+cement_per_bag
+sharp_sand_per_m3
+so_sand_per_m3
+granite_per_m3
+mixer_poker_operator_per_day
+HT_bars_per_ton
+MS_bars_per_ton
+binding_wire_per_kg
+BRC_65
+A142_per_m2
+record_date -->
+  <button type="submit" class="btn btn-primary w-100 my-4">Submit</button>
+	</form>
+</div>
+{% endblock content %}
