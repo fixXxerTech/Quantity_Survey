@@ -1,0 +1,193 @@
+{% extends 'base.html' %} <-- inherit the general template
+{% load static %}
+ 
+{% block extra_css %}
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css"> -->
+{% endblock extra_css %}
+
+{% block content %}
+<div class="container" >
+    <div class= "row">
+        <!-- <div class="col-sm"> -->
+            <table cellspacing="5" cellpadding="5">
+                <!-- <tbody> -->
+                    <form>
+                        <div class="form-row">
+                            <div class="col">
+                                <!-- <tr> -->
+                                    <label for="min">Minimum date:</label>
+                                    <!-- <td>Minimum date:</td> -->
+                                    <td><input type="text" id="min" name="min" class="form form-control"></td>
+                                <!-- </tr> -->
+                            </div>
+                            <div class="col">
+                                <!-- <tr> -->
+                                    <label for="max">Maximum date:</label>
+                                    <!-- <td>Maximum date:</td> -->
+                                    <td><input type="text" id="max" name="max" class="form form-control"></td>
+                                <!-- </tr> -->
+                            </div>
+                        </div>
+                    </form>
+                <!-- </tbody> -->
+            </table>
+
+            <table id="example" class="display nowrap table table-bordered table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Suveyor</th>
+                        <th>Labour/Day</th>
+                        <th>Artisan/Day</th>
+                        <th>Cal DB/Day</th>
+                        <th>Diesel Price/Liter</th>
+                        <!-- <th>Diesel Used/Day</th> -->
+                        <th>Petrol Price/Liter</th>
+                        <!-- <th>Petrol Used/Day</th> -->
+                        <th>Extractor/Day</th>
+                        <th>Dieldrax/Day</th>
+                        <th>Laterite/m3</th>
+                        <th>Hand Roller/Day</th>
+                        <th>Hardcore/m3</th>
+                        <th>Tipper/Day</th>
+                        <th>Polthene/Roll</th>
+                        <th>Cement/Bag</th>
+                        <th>Sh Sand/m3</th>
+                        <th>SO Sand/m3</th>
+                        <th>Granite/m3</th>
+                        <th>Mixer/Poker/Operator/Day</th>
+                        <th>HT Bar/Ton</th>
+                        <th>MS Bar/Ton</th>
+                        <th>Binding Wire/Kg</th>
+                        <th>BRC_65</th>
+                        <th>A142/m2</th>
+                        <th>Date</th>
+                        <th>View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in survey_records %}
+                        <tr>
+                            <td>{{ record.auth_user }}</td>
+                            <td>{{ record.labour_per_day }}</td>
+                            <td>{{ record.artisan_per_day}}</td>
+                            <td>{{ record.cal_DB_per_day }}</td>
+                            <td>{{ record.diesel_price_per_liter }}</td>
+                            <!-- Recall this is the custom method we added in the source data model NOT the petrol_price_per_liter -->
+                            <!-- <td>{{ record.diesel_per_day }}</td> -->
+                            <td>{{ record.petrol_price_per_liter }}</td>
+                            <!-- Recall this is the custom method we added in the source data model NOT the petrol_price_per_liter -->
+                            <!-- <td>{{ record.petrol_per_day }}</td> -->
+                            <td>{{ record.extractor_per_day }}</td>
+                            <td>{{ record.dieldrex_per_liter }}</td>
+                            <td>{{ record.laterite_per_m3 }}</td>
+                            <td>{{ record.hand_roller_per_day }}</td>
+                            <td>{{ record.hardcore_per_m3 }}</td>
+                            <td>{{ record.tipper_per_day }}</td>
+                            <td>{{ record.polythene_per_roll }}</td>
+                            <td>{{ record.cement_per_bag }}</td>
+                            <td>{{ record.sharp_sand_per_m3 }}</td>
+                            <td>{{ record.so_sand_per_m3 }}</td>
+                            <td>{{ record.granite_per_m3 }}</td>
+                            <td>{{ record.mixer_poker_operator_per_day }}</td>
+                            <td>{{ record.HT_bars_per_ton }}</td>
+                            <td>{{ record.MS_bars_per_ton }}</td>
+                            <td>{{ record.binding_wire_per_kg }}</td>
+                            <td>{{ record.BRC_65 }}</td>
+                            <td>{{ record.A142_per_m2 }}</td>
+                            <td>{{ record.record_date }}</td>
+                            <td>
+                                <a href="{% url 'calculationsView' pk=record.pk %}">
+                                    <button type="button" class="btn btn-outline-primary">More</button>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+
+                <tfoot class="thead-dark">
+                    <tr>
+                        <th>Suveyor</th>
+                        <th>Labour/Day</th>
+                        <th>Artisan/Day</th>
+                        <th>Cal DB/Day</th>
+                        <th>Diesel Price/Liter</th>
+                        <!-- <th>Diesel Used/Day</th> -->
+                        <th>Petrol Price/Liter</th>
+                        <!-- <th>Petrol Used/Day</th> -->
+                        <th>Extractor/Day</th>
+                        <th>Dieldrax/Day</th>
+                        <th>Laterite/m3</th>
+                        <th>Hand Roller/Day</th>
+                        <th>Hardcore/m3</th>
+                        <th>Tipper/Day</th>
+                        <th>Polthene/Roll</th>
+                        <th>Cement/Bag</th>
+                        <th>Sh Sand/m3</th>
+                        <th>SO Sand/m3</th>
+                        <th>Granite/m3</th>
+                        <th>Mixer/Poker/Operator/Day</th>
+                        <th>HT Bar/Ton</th>
+                        <th>MS Bar/Ton</th>
+                        <th>Binding Wire/Kg</th>
+                        <th>BRC_65</th>
+                        <th>A142/m2</th>
+                        <th>Date</th>
+                        <th>View</th>
+                    </tr>
+                </tfoot>
+            </table>
+        <!-- </div> -->
+    </div>
+</div>
+{% endblock content %}
+ 
+{% block js %}
+ 
+<!--     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+     
+    <script type="text/javascript">
+        var minDate, maxDate;
+ 
+        // Custom filtering function which will search data in column four between two values
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var min = minDate.val();
+                var max = maxDate.val();
+                var date = new Date( data[4] );
+         
+                if (
+                    ( min === null && max === null ) ||
+                    ( min === null && date <= max ) ||
+                    ( min <= date   && max === null ) ||
+                    ( min <= date   && date <= max )
+                ) {
+                    return true;
+                }
+                return false;
+            }
+        );
+         
+        $(document).ready(function() {
+            // Create date inputs
+            minDate = new DateTime($('#min'), {
+                format: 'MMMM Do YYYY'
+            });
+            maxDate = new DateTime($('#max'), {
+                format: 'MMMM Do YYYY'
+            });
+         
+            // DataTables initialisation
+            var table = $('#example').DataTable();
+         
+            // Refilter the table
+            $('#min, #max').on('change', function () {
+                table.draw();
+            });
+        });
+    </script>
+{% endblock js %}
